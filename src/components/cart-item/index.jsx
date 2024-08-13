@@ -3,24 +3,22 @@ import { useDispatch } from "react-redux";
 
 // Styles
 import * as Styles from "./styles";
-import { removeProductFromCart } from "../../redux/cart/actions";
-import { increaseProductFromCart } from "../../redux/cart/actions";
-import { decreaseProductFromCart } from "../../redux/cart/actions";
+import { removeProduct, increaseProductQuantity, decreaseProductQuantity } from "../../redux/cart/slice";
 
   const CartItem = ({ product }) => {
 
   const dispatch = useDispatch()
   
   const handleRemoveClick = () => {
-    dispatch(removeProductFromCart(product.id))
+    dispatch(removeProduct(product.id))
   };
 
   const handleIncreaseClick = () => {
-    dispatch(increaseProductFromCart(product.id))
+    dispatch(increaseProductQuantity(product.id))
   };
 
   const handleDecreaseClick = () => {
-    dispatch(decreaseProductFromCart(product.id))
+    dispatch(decreaseProductQuantity(product.id))
   };
 
   return (

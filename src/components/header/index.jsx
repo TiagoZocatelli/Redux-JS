@@ -7,7 +7,7 @@ import Cart from "../cart/index";
 // Styles
 import * as Styles from "./styles";
 import rootReducer from "../../redux/root-reducer";
-import {loginUsers, logoutUsers} from "../../redux/user/actions";
+import { userLogin, userLogout } from "../../redux/user/slice";
 import { selectProductsCount } from "../../redux/cart/cart.selectors";
 
 function Header() {
@@ -25,12 +25,12 @@ function Header() {
   };
 
   const handleLoginClick = () => {
-      dispatch(loginUsers({name: 'tiago', email: 'tiago@gmail.com'}))
+      dispatch(userLogin({name: 'tiago', email: 'tiago@gmail.com'}))
   }
 
 
   const handleLogoutClick = () => {
-    dispatch(logoutUsers())
+    dispatch(userLogout())
   }
 
 
